@@ -40,6 +40,18 @@ Route::group(['middleware' => 'web'], function () {
       Route::get('editar/{id}',       ['as' => 'dados.edit',    'uses'=> 'Auth\DadosPessoaisController@show']);
       Route::post('atualizar/{id}',   ['as' => 'dados.update',  'uses'=> 'Auth\DadosPessoaisController@update']);
     });
+
+    Route::group(['prefix' => 'trusted'], function()
+      {
+      Route::get('/',                                         ['as' => 'trusted.index',  'uses'=> 'Auth\TrustedOneController@index']);
+      Route::get('novo_trustedone',                           ['as' => 'trusted.create',  'uses'=> 'Auth\TrustedOneController@create']);
+      Route::post('inserir_trustedone',                       ['as' => 'trusted.store',   'uses'=> 'Auth\TrustedOneController@store']);
+      Route::get('editar_trusteone/{id}',                     ['as' => 'trusted.edit',    'uses'=> 'Auth\TrustedOneController@show']);
+      Route::post('atualizar_trustedone/{id}',                ['as' => 'trusted.update',  'uses'=> 'Auth\TrustedOneController@update']);
+      Route::get('excluir_trustedone',                        ['as' => 'trusted.remove',  'uses'=> 'Auth\TrustedOneController@remove']);
+    });
+
+
 });
 
 

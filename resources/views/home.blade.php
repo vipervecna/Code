@@ -49,7 +49,7 @@
         <div class="col-sm-6 col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                      <a class="btn btn-warning btn--decorated product__btn" href="shopping-cart.html">TrustedOne</a>
+                      <a class="btn btn-warning btn--decorated product__btn" href="{!! route('trusted.index')!!}">TrustedOne</a>
                     </div>
 
                     <div class="panel-body">
